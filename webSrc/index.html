@@ -1,0 +1,45 @@
+<html>
+<head>
+<script Language="Javascript">
+function vol_down()
+{
+    document.location="cgi-bin/hello.cgi";
+}
+function vol_up()
+{
+    document.location="cgi-bin/hello.cgi";
+}
+function on()
+{
+    document.location="cgi-bin/blink.cgi";
+}
+function ch_up()
+{
+    document.location="cgi-bin/channeldown.cgi";
+}
+function dummy()
+{
+
+}
+
+</script>
+</head>
+<body>
+    <div style="text-align:center">
+    <h1></h1>
+
+    <img src="Graphic/power.png" id="f" onmousedown="on()" onmouseup="dummy(event)">
+
+	</br>
+	<img src="Graphic/vol_up.png" id="r" onmousedown="vol_up()" onmouseup="dummy(event)">
+
+    <img src="Graphic/vol_down.png" id="s" onmousedown="ch_up()" onmouseup="dummy(event)">
+
+</br>
+    <img src="Graphic/mute.png" id="l" onmousedown="vol_down()" onmouseup="dummy(event)">
+    	
+
+    </div>
+
+</body>
+</html>

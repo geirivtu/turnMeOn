@@ -1,0 +1,10 @@
+#!/bin/bash
+#sudo chmod +x transferscript
+
+echo Transfer webSrc
+
+sudo cp webSrc/* /var/www/
+
+echo Transfer cgiScripts
+
+sudo cp lowLevelSrc/cgiScripts/* /usr/lib/cgi-bin/
