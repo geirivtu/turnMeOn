@@ -1,0 +1,44 @@
+#download raspbian
+
+
+#Installing apache web server
+
+sudo apt-get update
+
+sudo apt-get install apache2 -y
+
+#Get lirc
+#Used http://alexba.in/blog/2013/01/06/setting-up-lirc-on-the-raspberrypi/ tutorial
+sudo apt-get install lirc
+
+#add this to your /etc/modules file:
+lirc_dev
+lirc_rpi gpio_in_pin=27 gpio_out_pin=17
+
+#Transfer cgi scripts and web src using the transferscript in turnMeOn folder
+
+sudo chmod +x transferscript
+./transferscript
+
+# Put CGI scripts in /usr/lib/cgi-bin. Make them executable by all using chmod a+x something.cgi-bin
+# Apache will run the scripts as user "www-data". If you need to run as sudo add user to sudo group
+# and add "www-data ALL=(ALL) NOPASSWD: ALL" using sudo visudo
+
+
+#To generate new remote control file
+
+	# Stop lirc to free up /dev/lirc0
+	sudo /etc/init.d/lirc stop
+
+	# Create a new remote control configuration file (using /dev/lirc0) and save the output to ~/lircd.conf
+	irrecord -d /dev/lirc0 ~/lircd.conf
+
+	# Make a backup of the original lircd.conf file
+	sudo mv /etc/lirc/lircd.conf /etc/lirc/lircd_original.conf
+
+	# Copy over your new configuration file
+	sudo cp ~/lircd.conf /etc/lirc/lircd.conf
+
+	# Start up lirc again
+	sudo /etc/init.d/lirc start
+	

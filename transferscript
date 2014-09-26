@@ -1,0 +1,16 @@
+#!/bin/bash
+#sudo chmod +x transferscript
+
+echo Transfer webSrc /var/www/
+
+sudo cp -r  webSrc/* /var/www/
+
+echo Transfer cgiScripts to /usr/lib/cgi-bin/
+
+sudo cp -r  lowLevelSrc/cgiScripts/* /usr/lib/cgi-bin/
+sudo chmod  +x /usr/lib/cgi-bin/*
+
+echo Transfer hardware.conf to /etc/lircd
+sudo cp lowLevelSrc/lirc/hardware.conf /etc/lircd/
+
+echo Create lircd.conf and transfer to /etc/lircd/
