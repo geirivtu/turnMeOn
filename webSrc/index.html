@@ -1,21 +1,31 @@
 <html>
 <head>
 <script Language="Javascript">
-function vol_down()
+
+
+function power()
 {
-    document.location="cgi-bin/hello.cgi";
+    document.location="cgi-bin/power.cgi";
+}
+function mute()
+{
+    document.location="cgi-bin/mute.cgi";
 }
 function vol_up()
 {
-    document.location="cgi-bin/hello.cgi";
+    document.location="cgi-bin/vol_up.cgi";
 }
-function on()
+function vol_down()
 {
-    document.location="cgi-bin/blink.cgi";
+    document.location="cgi-bin/vol_down.cgi";
 }
 function ch_up()
 {
-    document.location="cgi-bin/channeldown.cgi";
+    document.location="cgi-bin/ch_up.cgi";
+}
+function ch_down()
+{
+    document.location="cgi-bin/ch_down.cgi";
 }
 function macro_movie()
 {
@@ -32,21 +42,24 @@ function dummy()
     <div style="text-align:center">
     <h1></h1>
 
-    <img src="Graphic/power.png" id="f" onmousedown="on()" onmouseup="dummy(event)">
+    <img src="Graphic/power.png" id="f" onmousedown="power()" onmouseup="dummy(event)">
 
-	</br>
+</br>
 	<img src="Graphic/vol_up.png" id="r" onmousedown="vol_up()" onmouseup="dummy(event)">
 
-    <img src="Graphic/vol_down.png" id="s" onmousedown="ch_up()" onmouseup="dummy(event)">
+    <img src="Graphic/vol_down.png" id="s" onmousedown="vol_down()" onmouseup="dummy(event)">
 
 </br>
     <img src="Graphic/mute.png" id="l" onmousedown="vol_down()" onmouseup="dummy(event)">
 
+
+</br>
+	<img src="Graphic/ch_up.png" id="r" onmousedown="ch_up()" onmouseup="dummy(event)">
+
+    <img src="Graphic/ch_down.png" id="s" onmousedown="ch_down()" onmouseup="dummy(event)"> 	
 </br>
     <img src="Graphic/macro_movie.png" id="l" onmousedown="macro_movie()" onmouseup="dummy(event)">
-    	
-	
-
+</br>
     </div>
 
 </body>

@@ -7,28 +7,22 @@ sudo apt-get update
 
 sudo apt-get install apache2 -y
 
-#installing bcm2835 GPIO library
-# download the latest version of the library, say bcm2835-1.xx.tar.gz, then:
+#Get lirc
+#Used http://alexba.in/blog/2013/01/06/setting-up-lirc-on-the-raspberrypi/ tutorial
+sudo apt-get install lirc
 
-wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.XX.tar.gz  # XX = latest version, see http://www.airspayce.com/mikem/bcm2835/index.html
+#add this to your /etc/modules file:
+lirc_dev
+lirc_rpi gpio_in_pin=27 gpio_out_pin=17
 
-tar zxvf bcm2835-1.xx.tar.gz
-cd bcm2835-1.xx
-./configure
-sudo make
-sudo make check
-sudo make install
+#Transfer cgi scripts and web src using the transferscript in turnMeOn folder
 
+sudo chmod +x transferscript
+./transferscript
 
 # Put CGI scripts in /usr/lib/cgi-bin. Make them executable by all using chmod a+x something.cgi-bin
 # Apache will run the scripts as user "www-data". If you need to run as sudo add user to sudo group
 # and add "www-data ALL=(ALL) NOPASSWD: ALL" using sudo visudo
-
-
-# Get lirc
-#Used http://alexba.in/blog/2013/01/06/setting-up-lirc-on-the-raspberrypi/ tutorial
-
-sudo apt-get install lirc
 
 
 #To generate new remote control file

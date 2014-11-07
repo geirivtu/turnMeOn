@@ -1,10 +1,16 @@
 #!/bin/bash
 #sudo chmod +x transferscript
 
-echo Transfer webSrc
+echo Transfer webSrc /var/www/
 
-sudo cp webSrc/* /var/www/
+sudo cp -r  webSrc/* /var/www/
 
-echo Transfer cgiScripts
+echo Transfer cgiScripts to /usr/lib/cgi-bin/
 
-sudo cp lowLevelSrc/cgiScripts/* /usr/lib/cgi-bin/
+sudo cp -r  lowLevelSrc/cgiScripts/* /usr/lib/cgi-bin/
+sudo chmod  +x /usr/lib/cgi-bin/*
+
+echo Transfer hardware.conf to /etc/lirc
+sudo cp lowLevelSrc/lirc/hardware.conf /etc/lirc/
+
+echo Create lircd.conf and transfer to /etc/lirc/
