@@ -1,16 +1,15 @@
 #!/bin/bash
 irsend SEND_ONCE TV KEY_CHANNELUP
-sleep 0.5
+sleep 4
 irsend SEND_ONCE TV KEY_SOURCE
 sleep 0.5
 irsend SEND_ONCE TV KEY_DOWN
-sleep 0.3
+sleep 0.6
 irsend SEND_ONCE TV KEY_DOWN
-sleep 0.3
+sleep 0.6
 irsend SEND_ONCE TV KEY_DOWN
-sleep 0.5
+sleep 0.6
 irsend SEND_ONCE TV KEY_ENTER
-sleep 0.5
 irsend SEND_ONCE STERIO KEY_POWER
 sleep 0.5
 irsend SEND_ONCE STERIO KEY_RECEIVER_TV_SOUND
