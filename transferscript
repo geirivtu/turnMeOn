@@ -14,3 +14,4 @@ echo Transfer hardware.conf to /etc/lirc
 sudo cp -f lowLevelSrc/lirc/hardware.conf /etc/lirc/
 
 echo Create lircd.conf and transfer to /etc/lirc/
+sudo cp -f lowLevelSrc/lirc/lircd.conf /etc/lirc/
