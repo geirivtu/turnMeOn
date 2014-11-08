@@ -1,0 +1,38 @@
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.9.0-pre1(default) on Sat Nov  8 10:22:05 2014
+#
+# contributed by
+#
+# brand:                       /home/pi/lircd.conf
+# model no. of remote control:
+# devices being controlled by this remote:
+#
+
+begin remote
+
+  name  STERIO
+  bits           13
+  flags RC5|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  one           897   884
+  zero          897   884
+  plead         897
+  gap          113683
+  toggle_bit_mask 0x800
+
+      begin codes
+          KEY_VOLUMEUP             0x0410
+          KEY_VOLUMEDOWN           0x0411
+          KEY_MUTE                 0x140D
+          KEY_RECEIVER_TV_SOUND    0x1400
+          KEY_RECEIVER_FM_SOUND    0x1435
+          KEY_RECEIVER_CD_SOUND    0x1407
+          KEY_POWER                0x140C
+      end codes
+
+end remote

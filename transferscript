@@ -11,6 +11,6 @@ sudo cp -r  lowLevelSrc/cgiScripts/* /usr/lib/cgi-bin/
 sudo chmod  +x /usr/lib/cgi-bin/*
 
 echo Transfer hardware.conf to /etc/lirc
-sudo cp lowLevelSrc/lirc/hardware.conf /etc/lirc/
+sudo cp -f lowLevelSrc/lirc/hardware.conf /etc/lirc/
 
 echo Create lircd.conf and transfer to /etc/lirc/
